@@ -37,7 +37,7 @@ public class MovieFacts {
         return Popularity;
     }
 
-    public boolean isAwards() {
+    public boolean hasAwards() {
         return Awards;
     }
 }
