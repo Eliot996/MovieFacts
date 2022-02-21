@@ -11,12 +11,31 @@ public class DataLoading {
 
     public static ArrayList<MovieFacts> loadMovieFacts() {
         ArrayList<MovieFacts> movieFacts = new ArrayList<>();
+        Scanner scanner = null;
+        
         try {
-            Scanner scanner = new Scanner(new File("src/main/resources/data/imdb.data"));
+             scanner = new Scanner(new File("src/main/resources/data/imdb-data.csv"));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
-        return null;
+
+        // to get past the first
+        scanner.nextLine();
+
+        String[] tempArray;
+        while(scanner.hasNextLine()) {
+            tempArray = scanner.nextLine().split(";");
+
+            movieFacts.add(new MovieFacts(
+                    Integer.parseInt(tempArray[0]),
+                    Integer.parseInt(tempArray[1]),
+                    tempArray[2],
+                    tempArray[3],
+                    Integer.parseInt(tempArray[4]),
+                    Boolean.parseBoolean(tempArray[5])));
+        }
+
+        return movieFacts;
     }
 
 }
