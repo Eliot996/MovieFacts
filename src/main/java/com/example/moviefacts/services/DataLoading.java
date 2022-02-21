@@ -32,7 +32,7 @@ public class DataLoading {
                     tempArray[2],
                     tempArray[3],
                     Integer.parseInt(tempArray[4]),
-                    Boolean.parseBoolean(tempArray[5])));
+                    tempArray[5].equals("Yes")));
         }
 
         return movieFacts;
