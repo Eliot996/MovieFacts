@@ -1,43 +1,51 @@
 package com.example.moviefacts.models;
 
 public class MovieFacts {
-    private int Year;
-    private int Length;
-    private String Title;
-    private String Subject;
-    private int Popularity;
-    private boolean Awards;
+    private int year;
+    private int length;
+    private String title;
+    private String subject;
+    private int popularity;
+    private boolean awards;
 
     public MovieFacts(int year, int length, String title, String subject, int popularity, boolean awards) {
-        Year = year;
-        Length = length;
-        Title = title;
-        Subject = subject;
-        Popularity = popularity;
-        Awards = awards;
+        this.year = year;
+        this.length = length;
+        this.title = title;
+        this.subject = subject;
+        this.popularity = popularity;
+        this.awards = awards;
     }
 
     public int getYear() {
-        return Year;
+        return year;
     }
 
     public int getLength() {
-        return Length;
+        return length;
     }
 
     public String getTitle() {
-        return Title;
+        return title;
     }
 
     public String getSubject() {
-        return Subject;
+        return subject;
     }
 
     public int getPopularity() {
-        return Popularity;
+        return popularity;
     }
 
     public boolean hasAwards() {
-        return Awards;
+        return awards;
+    }
+
+    public String getAwards() {
+        if (awards) {
+            return "yes";
+        } else {
+            return "no";
+        }
     }
 }
