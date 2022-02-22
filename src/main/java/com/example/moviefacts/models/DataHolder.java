@@ -54,4 +54,15 @@ public class DataHolder {
 
         return total;
     }
+
+    public ArrayList<MovieFacts> getMoviesWithCharacters(char character, int amount) {
+        ArrayList<MovieFacts> movieFacts = new ArrayList<>();
+
+        for (MovieFacts mf : listOfMovieFacts) {
+            if (mf.hasCharacters(character, amount))
+            movieFacts.add(mf);
+        }
+
+        return movieFacts;
+    }
 }

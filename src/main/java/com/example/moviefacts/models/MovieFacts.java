@@ -53,4 +53,16 @@ public class MovieFacts implements Comparable<MovieFacts>{
     public int compareTo(MovieFacts o) {
         return this.year - o.year;
     }
+
+    public boolean hasCharacters(char character, int amount) {
+        int counter = 0;
+
+        for (int i = 0; i < title.length(); i++) {
+            if (title.charAt(i) == character) {
+                counter++;
+            }
+        }
+
+        return counter == amount;
+    }
 }

@@ -4,6 +4,7 @@ import com.example.moviefacts.models.DataHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class HomeController {
@@ -36,5 +37,13 @@ public class HomeController {
     public String getHowManyWonAnAward(Model model) {
         model.addAttribute("amount", dataHolder.getAmountOfAwards());
         return "howManyWonAnAward";
+    }
+
+    @GetMapping("/filter")
+    public String filterByCharacter(Model model, @RequestParam char character, @RequestParam int amount) {
+        model.addAttribute("movies", dataHolder.getMoviesWithCharacters(character, amount));
+        model.addAttribute("character", character);
+        model.addAttribute("amount", amount);
+        return "filter";
     }
 }
