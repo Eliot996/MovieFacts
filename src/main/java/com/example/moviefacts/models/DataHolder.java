@@ -47,4 +47,15 @@ public class DataHolder {
         Collections.sort(movieFacts);
         return movieFacts;
     }
+
+    public Integer getAmountOfAwards() {
+        int total = 0;
+        for (MovieFacts mf : listOfMovieFacts) {
+            if (mf.hasAwards()) {
+                total++;
+            }
+        }
+
+        return total;
+    }
 }
