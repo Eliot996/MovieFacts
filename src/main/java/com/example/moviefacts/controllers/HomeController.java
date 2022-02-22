@@ -52,6 +52,7 @@ public class HomeController {
         model.addAttribute("isLonger", dataHolder.IsLonger(g1, g2));
         model.addAttribute("g1", g1);
         model.addAttribute("g2", g2);
+        System.out.println(model.getAttribute("isLonger"));
         return "longest";
     }
 }

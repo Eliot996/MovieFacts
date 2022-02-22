@@ -7,11 +7,11 @@
 <body>
 <h1>Longest of the two genres</h1>
 
-<div th:if="${isLongest}">
+<div th:if="${isLonger}">
     <span th:text="${g1}"></span> is longer than <span th:text="${g2}"></span>
 </div>
 
-<div th:unless="${isLongest}">
+<div th:unless="${isLonger}">
     <span th:text="${g2}"></span> is longer than <span th:text="${g1}"></span>
 </div>
 
