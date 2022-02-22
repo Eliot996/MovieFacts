@@ -65,4 +65,25 @@ public class DataHolder {
 
         return movieFacts;
     }
+
+    public boolean IsLonger(String g1, String g2) {
+        int g1Length = 0;
+        int g1Amount = 0;
+        int g2Length = 0;
+        int g2Amount = 0;
+
+        for (MovieFacts mf : listOfMovieFacts) {
+            if (mf.isSubject(g1)) {
+                g1Length += mf.getLength();
+                g1Amount++;
+            }
+            if (mf.isSubject(g2)) {
+                g2Length += mf.getLength();
+                g2Amount++;
+            }
+        }
+
+
+        return g1Length/g1Amount > g2Length/g2Amount;
+    }
 }

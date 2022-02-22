@@ -65,4 +65,8 @@ public class MovieFacts implements Comparable<MovieFacts>{
 
         return counter == amount;
     }
+
+    public boolean isSubject(String g1) {
+        return subject.equals(g1);
+    }
 }

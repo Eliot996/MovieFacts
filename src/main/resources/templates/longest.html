@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Longest</title>
+</head>
+<body>
+<h1>Longest of the two genres</h1>
+
+<div th:if="${isLongest}">
+    <span th:text="${g1}"></span> is longer than <span th:text="${g2}"></span>
+</div>
+
+<div th:unless="${isLongest}">
+    <span th:text="${g2}"></span> is longer than <span th:text="${g1}"></span>
+</div>
+
+</body>
+</html>

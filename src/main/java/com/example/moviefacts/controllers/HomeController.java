@@ -46,4 +46,12 @@ public class HomeController {
         model.addAttribute("amount", amount);
         return "filter";
     }
+
+    @GetMapping("/longest")
+    public String filterByCharacter(Model model, @RequestParam String g1, @RequestParam String g2) {
+        model.addAttribute("isLonger", dataHolder.IsLonger(g1, g2));
+        model.addAttribute("g1", g1);
+        model.addAttribute("g2", g2);
+        return "longest";
+    }
 }
