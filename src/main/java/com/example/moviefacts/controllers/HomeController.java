@@ -23,12 +23,18 @@ public class HomeController {
     @GetMapping("/random")
     public String getRandom(Model model) {
         model.addAttribute("movies", dataHolder.getRandom());
-        return "firstShown";
+        return "getRandom";
     }
 
     @GetMapping("/tenSortedRandom")
     public String getTenSortedRandom(Model model) {
         model.addAttribute("movies", dataHolder.getTenSortedRandom());
-        return "firstShown";
+        return "tenSortByPopularity";
+    }
+
+    @GetMapping("/howManyWonAnAward")
+    public String getHowManyWonAnAward(Model model) {
+        model.addAttribute("amount", dataHolder.getAmountOfAwards());
+        return "howManyWonAnAward";
     }
 }

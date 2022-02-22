@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Random;
 
 public class DataHolder {
-    private ArrayList<MovieFacts> listOfMovieFacts;
+    private final ArrayList<MovieFacts> listOfMovieFacts;
 
     public DataHolder() {
         listOfMovieFacts = DataLoading.loadMovieFacts();
@@ -23,10 +23,6 @@ public class DataHolder {
     public boolean add(MovieFacts movieFacts){
 
         return listOfMovieFacts.add(movieFacts);
-    }
-
-    public ArrayList<MovieFacts> getListOfMovieFacts() {
-        return listOfMovieFacts;
     }
 
     public ArrayList<MovieFacts> getRandom() {
