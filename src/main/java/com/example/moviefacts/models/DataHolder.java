@@ -3,6 +3,7 @@ package com.example.moviefacts.models;
 import com.example.moviefacts.services.DataLoading;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
@@ -32,6 +33,18 @@ public class DataHolder {
         Random random = new Random();
         ArrayList<MovieFacts> movieFacts = new ArrayList<>();
         movieFacts.add(listOfMovieFacts.get(random.nextInt(listOfMovieFacts.size())));
+        return movieFacts;
+    }
+
+    public ArrayList<MovieFacts> getTenSortedRandom() {
+        Random random = new Random();
+        ArrayList<MovieFacts> movieFacts = new ArrayList<>();
+
+        for (int i = 0; i < 10; i++) {
+            movieFacts.add(listOfMovieFacts.get(random.nextInt(listOfMovieFacts.size())));
+        }
+
+        Collections.sort(movieFacts);
         return movieFacts;
     }
 }

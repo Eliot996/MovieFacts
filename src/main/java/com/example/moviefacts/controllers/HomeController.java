@@ -25,4 +25,10 @@ public class HomeController {
         model.addAttribute("movies", dataHolder.getRandom());
         return "firstShown";
     }
+
+    @GetMapping("/tenSortedRandom")
+    public String getTenSortedRandom(Model model) {
+        model.addAttribute("movies", dataHolder.getTenSortedRandom());
+        return "firstShown";
+    }
 }
