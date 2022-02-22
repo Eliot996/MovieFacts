@@ -1,6 +1,6 @@
 package com.example.moviefacts.models;
 
-public class MovieFacts {
+public class MovieFacts implements Comparable<MovieFacts>{
     private int year;
     private int length;
     private String title;
@@ -47,5 +47,10 @@ public class MovieFacts {
         } else {
             return "no";
         }
+    }
+
+    @Override
+    public int compareTo(MovieFacts o) {
+        return this.year - o.year;
     }
 }
