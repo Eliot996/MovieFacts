@@ -17,7 +17,7 @@ public class HomeController {
 
     @GetMapping("/getFirstShown")
     public String getFirstShown(Model model) {
-        model.addAttribute("movies", dataHolder.getFirst());
+        model.addAttribute("movie", dataHolder.getNameOfFirstMovie());
         return "firstShown";
     }
 

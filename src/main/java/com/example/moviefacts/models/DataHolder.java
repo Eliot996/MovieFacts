@@ -14,10 +14,9 @@ public class DataHolder {
         listOfMovieFacts = DataLoading.loadMovieFacts();
     }
 
-    public List<MovieFacts> getFirst() {
-        ArrayList<MovieFacts> movieFacts = new ArrayList<>();
-        movieFacts.add(listOfMovieFacts.get(0));
-        return movieFacts;
+    public String getNameOfFirstMovie() {
+
+        return listOfMovieFacts.get(0).getTitle();
     }
 
     public boolean add(MovieFacts movieFacts){
@@ -25,14 +24,14 @@ public class DataHolder {
         return listOfMovieFacts.add(movieFacts);
     }
 
-    public ArrayList<MovieFacts> getRandom() {
+    public List<MovieFacts> getRandom() {
         Random random = new Random();
         ArrayList<MovieFacts> movieFacts = new ArrayList<>();
         movieFacts.add(listOfMovieFacts.get(random.nextInt(listOfMovieFacts.size())));
         return movieFacts;
     }
 
-    public ArrayList<MovieFacts> getTenSortedRandom() {
+    public List<MovieFacts> getTenSortedRandom() {
         Random random = new Random();
         ArrayList<MovieFacts> movieFacts = new ArrayList<>();
 
@@ -55,7 +54,7 @@ public class DataHolder {
         return total;
     }
 
-    public ArrayList<MovieFacts> getMoviesWithCharacters(char character, int amount) {
+    public List<MovieFacts> getMoviesWithCharacters(char character, int amount) {
         ArrayList<MovieFacts> movieFacts = new ArrayList<>();
 
         for (MovieFacts mf : listOfMovieFacts) {
